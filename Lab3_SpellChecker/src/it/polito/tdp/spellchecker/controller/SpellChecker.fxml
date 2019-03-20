@@ -1,7 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.BorderPane?>
-	
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.spellchecker.controller.SpellCheckerController">
-	<!-- TODO Add Nodes -->
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.spellchecker.controller.SpellCheckerController">
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="TOP_RIGHT" spacing="30.0">
+               <children>
+                  <Label text="Choose the language:" />
+                  <ComboBox fx:id="comboBox" prefWidth="150.0" />
+               </children>
+            </HBox>
+            <TextArea fx:id="txtiInserisci" />
+            <HBox alignment="TOP_RIGHT">
+               <children>
+                  <Button fx:id="checkButton" alignment="TOP_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#doSpell" text="Spell Check" />
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label text="Wrong text" />
+               </children>
+            </HBox>
+            <TextArea fx:id="txtWrong" editable="false" prefHeight="200.0" prefWidth="200.0" />
+            <HBox alignment="TOP_RIGHT" spacing="30.0">
+               <children>
+                  <Label fx:id="errNumb" text="Errors" textFill="#dd3636" />
+                  <Button fx:id="clearButton" mnemonicParsing="false" onAction="#doClear" text="Clear Text" />
+               </children>
+            </HBox>
+            <Label fx:id="timeLabel" text="Label" />
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <Label text="Label" BorderPane.alignment="CENTER" />
+   </top>
 </BorderPane>
